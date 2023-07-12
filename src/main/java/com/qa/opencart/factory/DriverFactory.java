@@ -13,7 +13,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.safari.SafariDriver;
 
 import com.qa.opencart.exception.FrameworkException;
@@ -59,12 +58,12 @@ public class DriverFactory {
 			driver = new EdgeDriver();
 		}
 		else {
-			System.out.println("Please pass right browser..." + browserName);
+			System.out.println("Please pass right browser name..." + browserName);
 		}
 		
 		getDriver().manage().deleteAllCookies();
 		getDriver().manage().window().maximize();
-		getDriver().get(prop.getProperty("url"));
+		getDriver().get(prop.getProperty("url").trim());
 		return getDriver();
 	}
 	
