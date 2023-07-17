@@ -25,7 +25,7 @@ public class BaseTest {
 	protected ProductInfoPage productInfoPage;
 	protected RegisterPage registerPage;
 	
-	protected SoftAssert softAssert;//softAssert is non-static so have to create the obj. Assert methods are static so no need to create the obj.
+	protected SoftAssert softAssert;//'soft Assert' is non-static so have to create the obj. 'Assert' methods are static so no need to create the obj.
 	
 	@BeforeTest
 	public void setUp() {

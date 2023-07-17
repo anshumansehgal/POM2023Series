@@ -10,7 +10,7 @@ import io.qameta.allure.Step;
 
 public class LoginPage {
 	
-	//Blueprint says that you should your own driver, own private locators, own constructor and page actions 
+	//Blueprint says that you should use your own driver, own private locators, own constructor and page actions 
 	
 	//Every page will have its driver
 	private WebDriver driver;
