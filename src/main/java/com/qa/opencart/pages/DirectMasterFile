@@ -1,0 +1,9 @@
+package com.qa.opencart.pages;
+
+import org.openqa.selenium.By;
+
+public class DirectMasterFile {
+	
+	By diretcMaster = By.id("master");
+	
+}
