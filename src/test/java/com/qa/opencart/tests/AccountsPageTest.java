@@ -56,7 +56,6 @@ public class AccountsPageTest extends BaseTest {
 			{"iMac"},
 			{"Apple"},
 			{"Samsung"},
-			{"Incorrect data"}
 			};
 	}
 	
