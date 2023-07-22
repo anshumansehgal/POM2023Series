@@ -56,7 +56,6 @@ public class AccountsPage {
 	
 	public List<String> getAccountsPageHeadersList() {
 		
-//		List<WebElement> accHeadersList = driver.findElements(accsHeaders);
 		List<WebElement> accHeadersList	= eleUtil.waitForElementsToBeVisible(accsHeaders, AppConstants.DEFAULT_MEDIUM_TIME_OUT);
 			
 		//create empty arraylist
@@ -72,7 +71,6 @@ public class AccountsPage {
 		return accHeadersValList;
 	}
 	
-	//search
 	public SearchPage performSearch(String searchKey) {
 		
 		if(isSearchExist()) {
