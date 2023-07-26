@@ -5,6 +5,7 @@ import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.asserts.SoftAssert;
 
 import com.qa.opencart.factory.DriverFactory;
@@ -27,10 +28,16 @@ public class BaseTest {
 	
 	protected SoftAssert softAssert;//'soft Assert' is non-static so have to create the obj. 'Assert' methods are static so no need to create the obj.
 	
+	@Parameters({"browser"})
 	@BeforeTest
-	public void setUp() {
+	public void setUp(String browserName) {
 		df = new DriverFactory();
 		prop = df.initProperty();
+		
+		if(browserName!=null) {
+			prop.setProperty("browser", browserName);
+		}
+		
 		driver = df.initDriver(prop);
 		loginPage = new LoginPage(driver);
 		
