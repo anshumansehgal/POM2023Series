@@ -28,14 +28,16 @@ public class BaseTest {
 	
 	protected SoftAssert softAssert;//'soft Assert' is non-static so have to create the obj. 'Assert' methods are static so no need to create the obj.
 	
-	@Parameters({"browser"})
+	@Parameters({"browser", "browserversion", "testcasename"})
 	@BeforeTest
-	public void setUp(String browserName) {
+	public void setUp(String browserName, String browserVersion, String testCaseName) {
 		df = new DriverFactory();
 		prop = df.initProperty();
 		
 		if(browserName!=null) {
 			prop.setProperty("browser", browserName);
+			prop.setProperty("browserversion", browserVersion);
+			prop.setProperty("testcasename", testCaseName);
 		}
 		
 		driver = df.initDriver(prop);
