@@ -6,12 +6,16 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import org.testng.log4testng.Logger;
 
 import com.qa.opencart.base.BaseTest;
 import com.qa.opencart.constants.AppConstants;
 import com.qa.opencart.utils.ExcelUtil;
 
 public class RegisterPageTest extends BaseTest {
+	
+	//log4j --write this line in all test classes
+	private final Logger logger = Logger.getLogger(RegisterPageTest.class);
 
 	@BeforeClass  //pre-condition
 	public void regPageSetup() {

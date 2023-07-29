@@ -6,11 +6,15 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import org.testng.log4testng.Logger;
 
 import com.qa.opencart.base.BaseTest;
 import com.qa.opencart.constants.AppConstants;
 
 public class AccountsPageTest extends BaseTest {
+	
+	//log4j --write this line in all test classes
+	private final Logger logger = Logger.getLogger(AccountsPageTest.class);
 
 	@BeforeClass
 	public void accPageSetup() {
@@ -19,12 +23,18 @@ public class AccountsPageTest extends BaseTest {
 
 	@Test
 	public void accPageTitleTest() {
+		
+		logger.info("This is a log message from login test");
+		
 		String actTitle = accPage.getAccPageTitle();
 		Assert.assertEquals(actTitle, AppConstants.ACCOUNTS_PAGE_TITLE_VALUE);
 	}
 	
 	@Test
 	public void accPageUrlTest() {
+		
+		logger.info("This is a log message from Login test");
+		
 		String actUrl = accPage.getAccPageUrl();
 		Assert.assertTrue(actUrl.contains(AppConstants.ACCOUNTS_PAGE_URL_FRACTION_VALUE));
 	}

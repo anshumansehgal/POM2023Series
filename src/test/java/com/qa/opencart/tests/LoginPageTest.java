@@ -2,6 +2,7 @@ package com.qa.opencart.tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.log4testng.Logger;
 
 import com.qa.opencart.base.BaseTest;
 import com.qa.opencart.constants.AppConstants;
@@ -16,12 +17,20 @@ import io.qameta.allure.Story;
 @Story("US-Login: 101: Design login page features for OpenCart")
 public class LoginPageTest extends BaseTest {
 	
+	//log4j --write this line in all test classes
+	private final Logger logger = Logger.getLogger(LoginPageTest.class);
+	
 	@Severity(SeverityLevel.TRIVIAL)
 	@Description("This method is checking title on the login page.")
 	@Test(priority = 1)
 	public void loginPageTitleTest() {
+		
+		//Log4j
+		logger.info("This is a log message from login page title test");
+		
 		//inherit login page reference from BaseTest| Benefit-No need to create unnecessary obj. creation here
 		String actTitle = loginPage.getLoginPageTitle();
+		logger.info("Actial login page title: " + actTitle); //instead of system.out.println write logger.info
 		Assert.assertEquals(actTitle, AppConstants.LOGIN_PAGE_TITLE_VALUE);
 	}
 	
